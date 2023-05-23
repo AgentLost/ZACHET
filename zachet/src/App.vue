@@ -1,13 +1,13 @@
 <template>
-        
 </template>
 
 <script>
 import Auto from '@/components/Auto.vue';
 import ProductList from '@/components/ProductList.vue';
+import Search from '@/components/Search.vue'
 
 export default{
-    components: {Auto, ProductList},
+    components: {Auto, ProductList, Search},
     data() {
         return{
             products: [
