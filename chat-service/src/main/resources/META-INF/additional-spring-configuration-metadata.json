@@ -1,1 +1,8 @@
-{ "properties": [ ] }
+{
+  "properties": [
+    {
+      "name": "spring.database.driverClassName",
+      "type": "java.lang.String",
+      "description": "Description for spring.database.driverClassName."
+  }
+] }
