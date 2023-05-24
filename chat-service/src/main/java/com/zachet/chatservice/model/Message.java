@@ -1,12 +1,12 @@
 package com.zachet.chatservice.model;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.annotation.CreatedDate;
-
+import lombok.Builder;
 import javax.persistence.*;
-import java.sql.Date;
+import java.time.Instant;
+import java.util.Date;
 
 @Entity
+@Builder
 public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,14 +14,19 @@ public class Message {
     private int id;
 
     @Column(name = "chat_id", nullable = false)
-    private int chatId;
+    private String chatId;
 
-    @Column(name = "sender_id", nullable = false)
-    private int senderId;
+    @Column(name = "sender_id")
+    private String senderId;
 
     @Column(nullable = false)
     private String text;
 
-    @CreatedDate
-    private Date createAt;
+    @Builder.Default
+    @Column(name = "created_at")
+    private Date createdAt = Date.from(Instant.now());
+
+    public Message() {
+
+    }
 }
