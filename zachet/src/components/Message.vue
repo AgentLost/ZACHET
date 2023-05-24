@@ -50,5 +50,6 @@ export default {
     display: flex;
     flex-direction: column;
     max-width: 60%;
+    width: fit-content;
 }
 </style>

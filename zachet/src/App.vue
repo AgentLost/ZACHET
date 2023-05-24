@@ -1,14 +1,13 @@
 <template>
-    <div class="all">
-        <ChatWindow/>
-    </div>
+    <Auto/>
 </template>
 
 <script>
+import Auto from './components/Auto.vue';
 import ChatWindow from './components/ChatWindow.vue';
 
 export default{
-    components: {ChatWindow},
+    components: {ChatWindow, Auto},
 }
 </script>
 
@@ -18,15 +17,11 @@ export default{
     padding: 0;
     box-sizing: border-box;
 }
+
 #app{
     width: 100vw; 
     height: 100vh;
+    overflow: hidden;
 }
 
-.all{
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top right, #c7d2fe, 10%, #f3d3fc, #c7d2fe);
-
-}
 </style>
