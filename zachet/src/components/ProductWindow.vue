@@ -2,8 +2,12 @@
     <div class="productWindow">
         <div class="container">
             <div class="app">
-                <Search class="search"></Search>
-                <ProductList :products="products"></ProductList>
+                <div class="fix">
+                    <Search class="search"></Search>
+                </div>
+                <div class="scroll">
+                    <ProductList :products="products" ></ProductList>
+                </div>
             </div>
         </div>
     </div>
@@ -21,6 +25,8 @@ export default{
                 {id:3, title:'Product3', body: 'Хороший такой'},
                 {id:4, title:'Product4', body: 'Хороший такой'},
                 {id:5, title:'Product5', body: 'Хороший такой'},
+                {id:6, title:'Product6', body: 'Хороший такой'},
+                {id:7, title:'Product7', body: 'Хороший такой'},
 
             ],
             title:'',
@@ -29,26 +35,42 @@ export default{
     },
 }
 </script>
-<style>
+<style scoped>
 .app{
 
     margin-top: 10px;
     height: 40%;
 }
-.search{
-    position: sticky;
-}
 .productWindow{
-    position: absolute;
+    background-color: white;
+    position: fixed;
     bottom: 10px;
     right: 10px;
     border: 2px solid black;
+    border-radius: 25px;
     width: 28%;
     height: 70%;
     overflow-y: scroll;
+    display: flex;
 }
 ::-webkit-scrollbar {
   width: 0px;
   background: rgba(255, 255, 255, 0.0);
+}
+
+.fix{
+    width: 26.2%;
+    position: fixed;
+    background-color: white;
+    margin-top: -10px;
+    border-radius: 15px;
+}
+.scroll{
+    padding-top: 10%;
+    padding-bottom: 5px;
+}
+#app{
+    width: 100vw; 
+    height: 100vh;
 }
 </style>

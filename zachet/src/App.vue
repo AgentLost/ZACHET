@@ -1,12 +1,12 @@
 <template>
-<ProductWindow class="productWindow"></ProductWindow>
+    <ChatWindow/>
 </template>
 
 <script>
-import ProductWindow from '@/components/ProductWindow.vue';
+import ChatWindow from './components/ChatWindow.vue';
 
 export default{
-    components: {ProductWindow},
+    components: {ChatWindow},
 }
 </script>
 
