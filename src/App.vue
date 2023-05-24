@@ -1,30 +1,32 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div class="window">
+    <Sidebar />
+    <Chat />
+  </div>
 </template>
+<script>
 
+import Sidebar from '@/components/Sidebar.vue'
+import Chat from '@/components/Chat.vue'
+
+export default {
+  components: { Sidebar, Chat }
+
+}
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+.window {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to top right, #c7d2fe, 10%, #f3d3fc, #c7d2fe);
 }
 </style>
