@@ -23,14 +23,12 @@ export default {
 </script>
 <style>
 .message-content {
-    position: relative;
     padding: 5px;
-    background: #7000FF;
-    color: white;
+    background: #e7e7e7;
+    color: black;
     border-radius: 25px;
-    width: max-content;
-    max-width: 60%;
     word-break: normal;
+    padding: 5px 15px;
 }
 
 
@@ -41,5 +39,16 @@ export default {
 
 .right {
     align-self: end;
+}
+
+.right .message-content{
+    background: #7000FF;
+    color: white;
+}
+
+.message{
+    display: flex;
+    flex-direction: column;
+    max-width: 60%;
 }
 </style>

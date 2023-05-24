@@ -1,7 +1,6 @@
 <template>
     <div class="chat">
         <Message v-for="m in messages" :message="m" />
-        <MessageBar />
     </div>
 </template>
 <script>

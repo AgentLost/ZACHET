@@ -1,6 +1,6 @@
 <template>
     <div class="MessageBar">
-        <input type="text" placeholder="Введите сообщени...">
+        <input type="text" placeholder="Напишите что-нибудь здесь">
     </div>
 </template>
 <script>
@@ -16,11 +16,20 @@ export default {
 .MessageBar {
     display: flex;
     flex-direction: row;
-    position: fixed;
+    justify-content: center;
     bottom: 0;
+    margin-top: 2%;
 }
 
 .MessageBar input {
-    width: 100%;
+    width: 75%;
+    border-radius: 25px;
+    padding: 5px 15px;
+    border: 0;
+    background-color: #f1f7fc;
+}
+
+.MessageBar input:focus{
+    outline: 0;
 }
 </style>

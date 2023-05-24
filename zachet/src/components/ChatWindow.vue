@@ -1,82 +1,30 @@
 <template>
     <div class="all">
-    <div class="chatWindow">
-        <div class="topbar">
-            <p>Чат</p>
-        </div>
-        <div class="profile">
-            <div class="avatar">
-                <div class="image"></div>
+        <div class="chatWindow">
+            <Topbar/>
+            <Profile/>
+            <div class="chatmini">
+                <Chat/>
             </div>
-            <div class="name_status_container">
-                <div class="name">
-                    <p>Олег</p>
-                </div>
-                <div class="status">
-                    <p>Online</p>
-                </div>
-            </div>
+            <MessageBar/>
         </div>
-
-            <Chat/>
-
-        <div class="inputMes">
-
-        </div>
-    </div>
     </div>
 </template>
 <script>
 import Chat from './Chat.vue';
+import Topbar from './Topbar.vue';
+import Profile from './Profile.vue';
+import MessageBar from './MessageBar.vue';
 export default{
-    components: {Chat},
+    components: {Chat, Topbar, Profile, MessageBar},
 }
 </script>
-<style>
-.status{
-    padding-left: 6%;
-    font-size: 13px;
-    font-weight: 300;
-}
-.image{
-    width: 99%;
-    height: 99%;
-    border: 1px solid black;
-    border-radius: 50%;
-}
-.name{
-    height: 50%;
-    padding-top: 10px;
-    padding-left: 5%;
-    font-size: 20px;
-    font-weight: 500;
-}
-.name_status_container{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 77%;
-}
-.avatar{
-    width: 100px;
-    padding: 3px;
-    padding-left: 5%;
-}
-.topbar{
-    height: 10%;
-    padding-left: 5%;
-    padding-top: 10px;
-    font-size: 24px;
-    font-weight: 600;
-}
-.profile{
-    height: 15%;
-    display: flex;
-    flex-direction: row;
-    max-height: 100px;
-}
+<style scoped>
+
 .chatmini{
     height: 65%;
+    padding: 10px;
+    overflow-y: scroll;
 }
 .inputMes{
     height: 10%;
@@ -94,7 +42,6 @@ export default{
     border-radius: 25px;
     width: 25%;
     height: 70%;
-    overflow-y: scroll;
     display: flex;
     flex-direction: column;
     box-shadow: 0 0 10px rgb(126, 189, 225);
@@ -104,17 +51,6 @@ export default{
   background: rgba(255, 255, 255, 0.0);
 }
 
-.fix{
-    width: 26.2%;
-    position: fixed;
-    background-color: white;
-    margin-top: -10px;
-    border-radius: 15px;
-}
-.scroll{
-    padding-top: 10%;
-    padding-bottom: 5px;
-}
 #app{
     width: 100vw; 
     height: 100vh;
