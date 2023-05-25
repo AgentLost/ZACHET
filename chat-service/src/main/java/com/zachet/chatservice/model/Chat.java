@@ -1,20 +1,24 @@
 package com.zachet.chatservice.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.time.Instant;
 import java.util.Date;
 import java.util.UUID;
 
 @Entity
-@Builder
 @Getter
+@Setter
+@AllArgsConstructor
 public class Chat {
     @Id
     @Column(name = "chat_id")
-    @Builder.Default
-    private UUID id = UUID.randomUUID();
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     @Column(name = "client_id")
     private String clientId;
@@ -23,10 +27,11 @@ public class Chat {
     private String employeeId;
 
     @Column(name = "status")
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private ChatStatus status = ChatStatus.WAITING;
 
     @Column(name = "rating")
-    private int rating;
+    private int rating = -1;
 
     @Builder.Default
     @Column(name = "created_at")
