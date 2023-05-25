@@ -2,6 +2,7 @@
     <div class="sidebar_container">
     <div class="sidebar">
         <div class="search">
+            <span class="icon"><i class="fa fa-search"></i></span>
                 <input type="text" placeholder="Поиск по чатам">
             </div>
             <div class="dialogs">
@@ -9,7 +10,7 @@
                 <Dialog v-for="d in dialogs" :dialog="d" />
             </div>
             <div class="dialogs">
-                <div>Завершённые чаты</div>
+                <div class="title">Завершённые чаты</div>
                 <Dialog v-for="d in dialogs" :dialog="d" />
             </div>
         </div>
@@ -33,6 +34,15 @@ export default {
 }
 </script>
 <style scoped>
+.icon{
+  position: absolute;
+  top: 50%;
+  margin-left: 17px;
+  margin-top: -20.75%;
+  z-index: 1;
+  color: #4f5b66;
+}
+
 .sidebar_container{
     padding-top: 2%;
     width: 100%;
@@ -58,7 +68,7 @@ export default {
 }
 
 .search input {
-    text-align: center;
+    padding-left: 10%;
     width: 100%;
     height: 80px;
     border-radius: 20px;
@@ -80,8 +90,9 @@ export default {
     font-family: 'Noir Pro';
     font-style: normal;
     font-weight: 600;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     top:0;
+    font-size: 20px;
 
 }
 </style>

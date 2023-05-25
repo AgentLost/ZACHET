@@ -15,8 +15,8 @@ export default{
 <style>
 .chatWindow{
     width: 62% !important;
-    height: 85% !important;
-    bottom: 11% !important;
+    height: 88% !important;
+    bottom: 8% !important;
     right: 4% !important;
 }
 
