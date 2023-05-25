@@ -54,7 +54,7 @@ export default{
 .all{
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top right, #c7d2fe, 10%, #f3d3fc, #c7d2fe);
+    
 
 }
 </style>

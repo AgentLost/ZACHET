@@ -1,13 +1,12 @@
 <template>
-    <Auto/>
+    <Home/>
 </template>
 
 <script>
-import Auto from './components/Auto.vue';
-import ChatWindow from './components/ChatWindow.vue';
+import Home from './components/Home.vue'
 
 export default{
-    components: {ChatWindow, Auto},
+    components: {Home},
 }
 </script>
 
@@ -22,6 +21,7 @@ export default{
     width: 100vw; 
     height: 100vh;
     overflow: hidden;
+    background: linear-gradient(to top right, #c7d2fe, 10%, #f3d3fc, #c7d2fe);
 }
 
 </style>
