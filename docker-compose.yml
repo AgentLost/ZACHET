@@ -1,0 +1,25 @@
+version: '3.2'
+
+services:
+  chat:
+    container_name: chat
+    build:
+      context: ./chat-service
+      dockerfile: ./Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    restart: always
+
+  postgres:
+    image: 'postgres:latest'
+    container_name: postgresdb
+    ports:
+      - "5436:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: chatdb
+    volumes:
+      - ./db-data:/var/lib/postgresql/data/
